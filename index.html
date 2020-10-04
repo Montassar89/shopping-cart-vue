@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart __ Vuejs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Shopping Cart</h1>
+<div id="app">
+  <div v-if="!plants.length" class="cart-checkout">
+    <p>Cart is empty.</p>
+  </div>
+  <div v-if="checkout" class="cart-checkout">
+    <p>Thank you for your order!</p>
+    <transition-group  name="order-group" tag="div" class="cart-plants" appear>
+      <img  v-for="plant in plants"
+           @click="checkoutCart"
+           :key="plant.id" 
+           :src="plant.img" 
+           :alt="plant.name"/>
+    </transition-group>
+  </div>
+  <transition v-else name="fade-up" >
+    <transition-group  name="plants-group" tag="div" class="plants">
+      <div class="plant" v-for="plant in plants" :key="plant.id">
+          <img :src="plant.img" :alt="plant.name"/>
+          <div class="description">
+            <h4>{{plant.name}}</h3>
+            <p>Succulent</p>
+            <transition name="change-price">
+              <span class="price">${{plant.price}}</span>
+            </transition>
+          </div>
+          <div class="quantity">
+            <button @click="add(plant)" class="btn add"><i class="fas fa-chevron-up"></i></button>
+            <transition name="scale" mode="out-in">
+              <span :key="plant.quantity" class="number scale-animation">{{plant.quantity}}</span>
+            </transition>
+            <button @click="decrease(plant)" class="btn remove"><i class="fas fa-chevron-down"></i></button>
+          </div>
+      </div>
+    </transition-group>
+  </transition>
+  <div class="checkout">
+    <div class="total">Total: 
+      <transition name="scale" mode="out-in">
+        <span :key="sum" class="scale-animation">{{sum.toFixed(2)}}</span>
+      </transition>
+    </div>
+    <transition name="opacity" mode="out-in">
+      <button :disabled="!plants.length" v-if="!checkout" @click="checkoutCart">Checkout</button>
+    </transition>
+  </div>
+</div> 
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

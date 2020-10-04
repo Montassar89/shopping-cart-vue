@@ -1,0 +1,274 @@
+#app {
+  position: relative;
+  width: 450px;
+  height: 645px;
+  display: -webkit-box;
+  display: flex;
+  background: #1092c1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0px 7px 25px rgba(140, 140, 140, 0.2);
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+#app .plants {
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  width: inherit;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 7px 25px rgba(140, 140, 140, 0.2);
+}
+#app .plants .plant {
+  display: -webkit-box;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 20px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  padding: 10px;
+  margin: 20px 0;
+}
+#app .plants .plant:hover {
+  box-shadow: 0px 7px 15px rgba(140, 140, 140, 0.2);
+}
+#app .plants .plant:hover img {
+  -webkit-transform:  scale(1.2);
+          transform:  scale(1.2);
+}
+#app .plants .plant img {
+  width: 100px;
+  height: auto;
+  border-radius: 20px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+#app .plants .plant .description {
+  width: 180px;
+  padding-left: 25px;
+}
+#app .plants .plant .description h4 {
+  margin-top: 5px;
+}
+#app .plants .plant .description p {
+  color: #1092c1;
+}
+#app .plants .plant .description .price {
+  font-weight: 600;
+}
+#app .plants .plant .quantity {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  justify-content: space-around;
+  margin-left: 35px;
+  padding: 0 20px;
+  font-size: 18px;
+  background: rgb(228 243 248);
+  border-radius: 20px;
+}
+#app .plants .plant .quantity .btn {
+  border: none;
+  background: none;
+  color: #1092c1;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+#app .plants .plant .quantity .btn:hover {
+  -webkit-transform: scale(1.45);
+          transform: scale(1.45);
+}
+#app .plants .plant .quantity .number {
+  font-weight: 600;
+  -webkit-animation: scale .3s ease;
+          animation: scale .3s ease;
+}
+#app .checkout {
+  position: absolute;
+  top: 520px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+#app .checkout .total {
+  font-weight: 900;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+#app .checkout .total span {
+  font-size: 24px;
+  margin-left: 9px;
+}
+#app .checkout button {
+  font-size: 18px;
+  background: #f9a100;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 100px;
+  border: none;
+  border-radius: 20px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+#app .checkout button:hover {
+  box-shadow: 0px 7px 25px rgba(140, 140, 140, 0.2);
+}
+#app .checkout button:disabled {
+  background-color: #1092c1;
+  cursor: not-allowed;
+}
+#app .cart-checkout {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 480px;
+  margin-top: 20px;
+}
+#app .cart-checkout .cart-plants {
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+#app .cart-checkout p {
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+  width: 240px;
+  color: #fff;
+}
+
+*:focus {
+  outline-color: #f9a100;
+}
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  color: #424242;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#fff), to(#1092c1));
+  background-image: linear-gradient(to right top, #fff, #1092c1);
+}
+h1{color: #fff;}
+.fade-up-leave-active {
+  -webkit-transition: .6s all ease;
+  transition: .6s all ease;
+}
+
+.fade-up-leave {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.fade-up-enter, .fade-up-leave-to {
+  -webkit-transform: translateY(-500px);
+          transform: translateY(-500px);
+}
+
+.scale-enter-active {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.scale-leave-active {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.scale-enter, .scale-leave-to {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.opacity-leave-active {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.opacity-enter, .opacity-leave-to {
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  opacity: 0;
+}
+
+.plants-group-leave-active {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.plants-group-enter, .plants-group-leave-to {
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  opacity: 0;
+}
+
+.order-group-enter-active {
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+}
+
+.order-group-enter, .order-group-leave-to {
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
+  opacity: 0;
+}
+
+.fa-instagram {
+  position: absolute;
+  color: #1092c1;
+  top: 3%;
+  right: 2%;
+  font-size: 38px;
+}
+
+.fa-instagram:hover {
+  font-size: 42px;
+  color: #f9a100;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+  cursor: pointer;
+}
